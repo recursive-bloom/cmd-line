@@ -23,11 +23,11 @@ impl Subcommand {
 
 		match self {
 			Subcommand::Account(cmd) => {
-				println!("##Account##");
+				println!("##Subcommand: Account##");
 				cmd.run(backend);
 			}
 			Subcommand::Contract(cmd) => {
-				println!("##Contract##");
+				println!("##Subcommand: Contract##");
 				cmd.run(backend);
 			}
 		}

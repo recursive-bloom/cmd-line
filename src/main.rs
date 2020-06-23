@@ -21,3 +21,32 @@ fn main() {
 	}
 }
 
+/***
+
+Cli {
+    subcmd: Some(
+        Contract(
+            ContractCmd {
+                cmd: Call {
+                    from: "0000000000000000000000000000000000000001",
+                    value: "0",
+                    to: "0000000000000000000000000000000000000002",
+                    gas: 100000,
+                    gas_price: "0",
+                    data: Some(
+                        "000000",
+                    ),
+                    data_file: Some(
+                        "abc.txt",
+                    ),
+                },
+            },
+        ),
+    ),
+}
+
+ ***/
+
+
+
+

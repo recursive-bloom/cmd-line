@@ -118,6 +118,8 @@ impl ContractCmd {
                     }
                 }.expect("--code or --code-file must be provided one of them ");
                 println!("Deploy {:#?}", backend);
+                println!(" from=={:#?}\n value=={:#?}\n gas=={:#?}\n gas_price=={:#?}\n code=={:#?}\n code_file=={:#?}\n",
+                         from, value, gas, gas_price, code, code_file);
             }
 
             Command::Call {from,value,to,gas,gas_price,data,data_file} => {
@@ -151,6 +153,8 @@ impl ContractCmd {
                     }
                 }.unwrap_or(&contents);
                 println!("Call {:#?}", backend);
+                println!(" from=={:#?}\n to=={:#?}\n value=={:#?}\n gas=={:#?}\n gas_price=={:#?}\n data=={:#?}\n data_file=={:#?}\n",
+                         from, to, value, gas, gas_price, data, data_file);
             }
         }
     }
