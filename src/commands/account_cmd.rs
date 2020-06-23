@@ -4,9 +4,9 @@ use std::fmt;
 use std::collections::BTreeMap;
 use std::str::FromStr; // !!! Necessary for H160::from_str(address).expect("...");
 
-// target/debug/bloom-evm account create --address 59a5208b32e627891c389ebafc644145224006e8 --value 10 --nonce 12
-// target/debug/bloom-evm account query --address 59a5208b32e627891c389ebafc644145224006e8
-// target/debug/bloom-evm account query --address 59a5208b32e627891c389ebafc644145224006e8 --storage-trie
+// target/debug/bloom-cmd account create --address 59a5208b32e627891c389ebafc644145224006e8 --value 10 --nonce 12
+// target/debug/bloom-cmd account query --address 59a5208b32e627891c389ebafc644145224006e8
+// target/debug/bloom-cmd account query --address 59a5208b32e627891c389ebafc644145224006e8 --storage-trie
 
 #[derive(Debug, Clone, StructOpt)]
 pub struct AccountCmd {
