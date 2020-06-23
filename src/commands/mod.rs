@@ -28,7 +28,7 @@ impl Subcommand {
 			}
 			Subcommand::Contract(cmd) => {
 				println!("##Contract##");
-				cmd.run(backend);ls
+				cmd.run(backend);
 			}
 		}
 
