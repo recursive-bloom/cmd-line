@@ -71,7 +71,7 @@ impl AccountCmd {
 	pub fn run(&self, mut backend: &str) {
 		match &self.cmd {
 			Command::Query {address, storage_trie} => {
-
+				let from = H160::from_str(address).expect("--address argument must be a valid address");
 				println!("Query {:#?}", backend);
 				println!(" address=={:#?}\n storage_trie=={:#?}\n", address, storage_trie);
 			},
@@ -82,7 +82,6 @@ impl AccountCmd {
 				let nonce = U256::from_dec_str(nonce.as_str()).expect("--nonce argument must be a valid number");
 				println!("Create {:#?}", backend);
 				println!(" address=={:#?}\n value=={:#?}\n nonce=={:#?}\n", address, value, nonce);
-
 			},
 
 			Command::Modify {address, value, nonce} => {
@@ -91,15 +90,12 @@ impl AccountCmd {
 				let nonce = U256::from_dec_str(nonce.as_str()).expect("--nonce argument must be a valid number");
 				println!("Modify {:#?}", backend);
 				println!(" address=={:#?}\n value=={:#?}\n nonce=={:#?}\n", address, value, nonce);
-
 			},
 
 			Command::Transfer {from, to, value} => {
-
 				let from = H160::from_str(from).expect("--from argument must be a valid address");
 				let to  = H160::from_str(to).expect("--to argument must be a valid address");
 				let value = U256::from_dec_str(value.as_str()).expect("--value argument must be a valid number");
-
 				println!("Transfer {:#?}", backend);
 				println!(" from=={:#?}\n to=={:#?}\n value=={:#?}\n", from, to, value);
 			}

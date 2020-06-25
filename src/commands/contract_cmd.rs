@@ -27,23 +27,18 @@ enum Command {
         /// The address which deploy contact
         #[structopt(long = "from")]
         from: String,
-
         /// The value to deposit in contract
         #[structopt(long = "value")]
         value: String,
-
         /// The gas limit for deploying contract
         #[structopt(long = "gas")]
         gas: u32,
-
         /// The gas price for deploying contract(Wei)
         #[structopt(long = "gas-price")]
         gas_price: String,
-
         /// The contract binary code
         #[structopt(long = "code")]
         code: Option<String>,
-
         /// The code file
         #[structopt(long = "code-file")]
         code_file: Option<String>,
@@ -55,31 +50,24 @@ enum Command {
         /// The address which send messageCall
         #[structopt(long = "from")]
         from: String,
-
         /// The value (Wei) for messageCall
         #[structopt(long = "value")]
         value: String,
-
         /// The receiver address for messageCall
         #[structopt(long = "to")]
         to: String,
-
         /// The gas limit for messageCall
         #[structopt(long = "gas")]
         gas: u32,
-
         /// The gas price (Wei) for messageCall
         #[structopt(long = "gas-price")]
         gas_price: String,
-
         /// The input data for messageCall
         #[structopt(long = "data")]
         data: Option<String>,
-
         /// The input data file for messageCall
         #[structopt(long = "data-file")]
         data_file: Option<String>,
-
     }
 }
 
@@ -88,7 +76,6 @@ impl ContractCmd {
     pub fn run(&self, mut backend: &str) {
         match &self.cmd {
             Command::Deploy {from,value,gas,gas_price,code,code_file} => {
-
                 let from = H160::from_str(from).expect("From should be a valid address");
                 let value = U256::from_dec_str(value.as_str()).expect("Value is invalid");
                 let gas_price = U256::from_dec_str(gas_price.as_str()).expect("Gas price is invalid");

@@ -9,7 +9,6 @@ pub struct Cli {
 	pub subcmd: Option<Subcommand>,
 }
 
-
 fn main() {
 	let cli = Cli::from_args();
 	println!("{:#?}", cli);
